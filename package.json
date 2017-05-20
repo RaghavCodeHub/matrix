@@ -1,6 +1,6 @@
 {
     "name": "matrix-js",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A Javascript Library to perform basic matrix operations using the functional nature of Javascript",
     "main": "lib",
     "directories": {

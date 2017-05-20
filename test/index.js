@@ -2,7 +2,7 @@
 
 const matrix = require('../lib');
 const assert = require('assert');
-let a, a1, a2, mat, mat1, mat2, m;
+let a, a1, a2, a3, a4, mat, mat1, mat2, mat3, mat4, m;
 
 it('should exist', () => {
     assert.ok(matrix);
@@ -17,10 +17,14 @@ describe('Matrix operations', () => {
         a = [[1, 2, 3], [4, 5, 6]];
         a1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         a2 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
+        a3 = [[1, 2, 3], [4, 5, 6]];
+        a4 = [[7, 8], [9, 10], [11, 12]];
         m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
         mat2 = matrix(a2);       
+        mat3 = matrix(a3);
+        mat4 = matrix(a4);
     });
     it('should return size', () => {
         assert.deepEqual(mat.size(), [2, 3]);
@@ -74,6 +78,7 @@ describe('Matrix operations', () => {
     
     it('should find the product of two matrices', () => {
        assert.deepEqual(mat1.prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]); 
+       assert.deepEqual(mat3.prod(mat4), [[58, 64], [139, 154]]);
     });
     
     it('should return the transpose of a matrix', () => {
