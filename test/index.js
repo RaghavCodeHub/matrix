@@ -17,14 +17,12 @@ describe('Matrix operations', () => {
         a = [[1, 2, 3], [4, 5, 6]];
         a1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         a2 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
-        a3 = [[1, 2, 3], [4, 5, 6]];
-        a4 = [[7, 8], [9, 10], [11, 12]];
+        a3 = [[7, 8], [9, 10], [11, 12]];
         m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
         mat2 = matrix(a2);       
         mat3 = matrix(a3);
-        mat4 = matrix(a4);
     });
     it('should return size', () => {
         assert.deepEqual(mat.size(), [2, 3]);
@@ -67,7 +65,8 @@ describe('Matrix operations', () => {
     it('should subtract two matrices', () => {
        assert.deepEqual(mat1.sub(mat2), [[0, 1, 2], [3, 4, 5], [6, 7, 8]]); 
     });
-    
+
+
     it('should find scalar product two matrices', () => {
        assert.deepEqual(mat1.mul(m), [[2, 4, 6], [8, 10, 12], [14, 16, 18]]); 
     });
@@ -78,7 +77,8 @@ describe('Matrix operations', () => {
     
     it('should find the product of two matrices', () => {
        assert.deepEqual(mat1.prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]); 
-       assert.deepEqual(mat3.prod(mat4), [[58, 64], [139, 154]]);
+       assert.deepEqual(mat.prod(mat3), [[58, 64], [139, 154]]);
+       assert.deepEqual(mat3.prod(mat), [[39, 54, 69], [49, 68, 87], [59, 82, 105]]);
     });
     
     it('should return the transpose of a matrix', () => {
