@@ -21,7 +21,7 @@ describe('Matrix operations', () => {
         m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
-        mat2 = matrix(a2);       
+        mat2 = matrix(a2);
         mat3 = matrix(a3);
     });
     it('should return size', () => {
@@ -39,51 +39,51 @@ describe('Matrix operations', () => {
     it('should return a row', () => {
         assert.deepEqual(mat(0), [1, 2, 3]);
     });
-    
+
     it('should return column', () => {
-       assert.deepEqual(mat([],0), [[1],[4]]); 
+       assert.deepEqual(mat([],0), [[1],[4]]);
     });
-    
+
     it('should return in specified range', () => {
        assert.deepEqual(mat([1,0],[2,1]), [[6, 5], [3, 2]]);
        assert.deepEqual(mat(0,[2,1]), [3, 2]);
        assert.deepEqual(mat([1,0],1), [[5], [2]]);
     });
-    
+
     it('should replace the specified index', () => {
-       assert.deepEqual(mat.set(1).to(8), [[1,2,3], [8,8,8]]); 
+       assert.deepEqual(mat.set(1).to(8), [[1,2,3], [8,8,8]]);
        assert.deepEqual(mat.set(1,2).to(8), [[1,2,3], [4,5,8]]);
        assert.deepEqual(mat.set([],1).to(8), [[1,8,3], [4,8,6]]);
        assert.deepEqual(mat1.set([],[1,2]).to(8), [[1,8,8], [4,8,8], [7,8,8]]);
        assert.deepEqual(mat1.set([1,2],[1,2]).to(8), [[1,2,3], [4,8,8], [7,8,8]]);
     });
-    
+
     it('should add two matrices', () => {
         assert.deepEqual(mat1.add(mat2), [[2, 3, 4], [5, 6, 7], [8, 9, 10]]);
     });
-    
+
     it('should subtract two matrices', () => {
-       assert.deepEqual(mat1.sub(mat2), [[0, 1, 2], [3, 4, 5], [6, 7, 8]]); 
+       assert.deepEqual(mat1.sub(mat2), [[0, 1, 2], [3, 4, 5], [6, 7, 8]]);
     });
 
 
     it('should find scalar product two matrices', () => {
-       assert.deepEqual(mat1.mul(m), [[2, 4, 6], [8, 10, 12], [14, 16, 18]]); 
+       assert.deepEqual(mat1.mul(m), [[2, 4, 6], [8, 10, 12], [14, 16, 18]]);
     });
-    
+
     it('should divide each element of two matrices', () => {
-       assert.deepEqual(mat1.div(m), [[0.5, 1, 1.5], [2, 2.5, 3], [3.5, 4, 4.5]]); 
+       assert.deepEqual(mat1.div(m), [[0.5, 1, 1.5], [2, 2.5, 3], [3.5, 4, 4.5]]);
     });
-    
+
     it('should find the product of two matrices', () => {
-       assert.deepEqual(mat1.prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]); 
+       assert.deepEqual(mat1.prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]);
        assert.deepEqual(mat.prod(mat3), [[58, 64], [139, 154]]);
        assert.deepEqual(mat3.prod(mat), [[39, 54, 69], [49, 68, 87], [59, 82, 105]]);
     });
-    
+
     it('should return the transpose of a matrix', () => {
        assert.deepEqual(mat.trans(), [[1, 4], [2, 5], [3, 6]]);
-       assert.deepEqual(mat1.trans(), [[1, 4, 7], [2, 5, 8], [3, 6, 9]]); 
+       assert.deepEqual(mat1.trans(), [[1, 4, 7], [2, 5, 8], [3, 6, 9]]);
     });
 
     it('should return the determinant', () => {
@@ -131,5 +131,12 @@ describe('Matrix operations', () => {
         assert.deepEqual(matrix([[1], [3], [5]]).merge.right([[2], [4], [6]]), [[1, 2], [3, 4], [5, 6]]);
         assert.deepEqual(matrix([1, 2, 3, 4]).merge.right([5, 6, 7]), [1, 2, 3, 4, 5, 6, 7]);
         assert.deepEqual(matrix([[2, 4], [5, 5]]).merge.right([[1, 1], [1, 1]]), [[2, 4, 1, 1], [5, 5, 1, 1]]);
+    });
+
+    it('map: should map a function over a matrix', () => {
+        const square = (x) => x*x;
+        assert.deepEqual(matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).map(square),
+            [[1, 2*2, 3*3], [4*4, 5*5, 6*6], [7*7, 8*8, 9*9]]);
+        assert.deepEqual(matrix([1, 2, 3]).map(square), [1, 2*2, 3*3]);
     });
 });
