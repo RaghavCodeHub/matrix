@@ -107,3 +107,10 @@ M.merge.top([1, 2, 3, 4]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
 M = matrix([1, 2, 3 ,4]);
 M.merge.bottom([5, 6, 7, 8]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
 ```
+
+#### 17. Map
+Applies a given function over the matrix, elementwise. Similar to Array.map()
+```javascript
+M = matrix([1, 2, 3]);
+M.map(x => x*x); // returns [1, 4, 9]
+```
