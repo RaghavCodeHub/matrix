@@ -114,3 +114,10 @@ Applies a given function over the matrix, elementwise. Similar to Array.map()
 M = matrix([1, 2, 3]);
 M.map(x => x*x); // returns [1, 4, 9]
 ```
+> This example shows the arguments provided to the function  
+```javascript
+M = matrix([[1, 2], [3, 4]]);
+M.map(function(value, row, col, mat) {
+    return value * col
+}); // returns [[0, 2], [0, 4]]
+```
