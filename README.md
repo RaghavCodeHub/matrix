@@ -83,6 +83,11 @@ Should be invertible
 M = matrix([[1, 3, 3], [1, 4, 3], [1, 3 ,4]]);
 M.inv(); // returns [[7, -3, -3], [-1, 1, 0], [-1, 0 ,1]]
 ```
+#### 16. Adjunct
+```javascript
+M = matrix([[2, -4, 1], [-2, 6, 3], [1, 2, -1]]);
+M.adj(); // returns [[-12, -2, -18], [1, -3, -8], [-10, -8, 4]]
+```
 
 #### 16. Merge
 Merges two matrices in all directions
