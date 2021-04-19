@@ -2,6 +2,7 @@
 
 const matrix = require('../lib');
 const assert = require('assert');
+
 let a, a1, a2, a3, a4, mat, mat1, mat2, mat3, mat4, m;
 
 it('should exist', () => {
@@ -18,11 +19,13 @@ describe('Matrix operations', () => {
         a1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         a2 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
         a3 = [[7, 8], [9, 10], [11, 12]];
+        a4 = [[2, -4, 1], [-2, 6, 3], [1, 2, -1]]
         m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
         mat2 = matrix(a2);
         mat3 = matrix(a3);
+        mat4 = matrix(a4)
     });
     it('should return size', () => {
         assert.deepEqual(mat.size(), [2, 3]);
@@ -110,6 +113,11 @@ describe('Matrix operations', () => {
                 [0, 0.16666666666666666, 0]
             ]);
     });
+
+    it('should return the adjunct of a matrix', () => {
+        assert.deepEqual(mat4.adj(), [[-12, -2, -18], [1, -3, -8], [-10, -8, 4]]);
+        assert.deepEqual(mat1.adj(), [[-3, 6, -3], [6, -12, 6], [-3, 6, -3]]);
+    })
 
     it('should merge two matrices', () => {
         // top
