@@ -30,6 +30,6 @@
     },
     "homepage": "https://github.com/raghavgujjar/matrix#readme",
     "devDependencies": {
-        "mocha": "^2.4.5"
+        "mocha": "^8.3.2"
     }
 }
