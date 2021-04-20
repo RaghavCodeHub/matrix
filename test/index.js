@@ -3,7 +3,7 @@
 const matrix = require('../lib');
 const assert = require('assert');
 
-let a, a1, a2, a3, a4, mat, mat1, mat2, mat3, mat4, m;
+let a, a1, a2, a3, a4, a5, mat, mat1, mat2, mat3, mat4, mat5, m;
 
 it('should exist', () => {
     assert.ok(matrix);
@@ -20,12 +20,14 @@ describe('Matrix operations', () => {
         a2 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
         a3 = [[7, 8], [9, 10], [11, 12]];
         a4 = [[2, -4, 1], [-2, 6, 3], [1, 2, -1]]
+        a5 = [[1, -3, 0, -2], [3, -12, -2, -6], [-2, 10, 2, 5], [-1, 6, 1, 3]]
         m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
         mat2 = matrix(a2);
         mat3 = matrix(a3);
         mat4 = matrix(a4)
+        mat5 = matrix(a5)
     });
     it('should return size', () => {
         assert.deepEqual(mat.size(), [2, 3]);
@@ -117,6 +119,7 @@ describe('Matrix operations', () => {
     it('should return the adjunct of a matrix', () => {
         assert.deepEqual(mat4.adj(), [[-12, -2, -18], [1, -3, -8], [-10, -8, 4]]);
         assert.deepEqual(mat1.adj(), [[-3, 6, -3], [6, -12, 6], [-3, 6, -3]]);
+        assert.deepEqual(mat5.adj(), [[0, -1, 0, -2], [-1, 1, 2, -2], [0, -1, -3, 3], [2, -2, -3, 2]])
     })
 
     it('should merge two matrices', () => {
