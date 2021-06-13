@@ -60,6 +60,7 @@ B.sub(A); // returns [[2, 2, 2], [2, 2, 2], [2, 2, 2]]
 ```javascript
 A.mul(B); // returns [[3, 8, 15], [24, 35, 48], [56, 80, 99]]
 ```
+Nota Bene: This is not classical matrix multiplication (which is implemented using the prod() method). This simply multiplies together each element in matrix A with the corresponding element in matrix B. If A and B are not the same size, it will produce some NaN results.
 #### 11. Division
 ```javascript
 A.div(B); // returns [[0.33, 0.5, 0.6], [0.66, 0.71, 0.75], [0.77, 0.8, 0.81]]
