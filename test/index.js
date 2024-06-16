@@ -153,4 +153,12 @@ describe('Matrix operations', () => {
         assert.equal(A.equals(B), false);
         assert.equal(C.equals(C), true);
     });
+
+    it('should generate a matrix', () => {
+        assert.deepEqual(matrix.gen(4).size(2,3), [[4,4,4],[4,4,4]]);
+        assert.deepEqual(matrix.gen(2).size(2), [[2,2],[2,2]]);
+        assert.deepEqual(matrix.gen(1).diag(3,2), [[1,0],[0,1],[0,0]]);
+        assert.deepEqual(matrix.gen(2).diag(3,4), [[2,0,0,0],[0,2,0,0],[0,0,2,0]]);
+        assert.deepEqual(matrix.gen(1).diag(3), [[1,0,0],[0,1,0],[0,0,1]]);
+    });
 });
