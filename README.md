@@ -132,3 +132,14 @@ B = matrix([[3,4], [1,2]]);
 A.equals(B);
 // returns false
 ```
+
+#### 19. Generate
+Generates a matrix with the value passed across the entire matrix or just the diagonal.
+```javascript
+matrix.gen(4).size(2,3); // returns [[4,4,4],[4,4,4]]
+matrix.gen(2).size(2); // returns [[2,2],[2,2]]
+matrix.gen(1).diag(3); // return [[1,0,0],[0,1,0],[0,0,1]], identity matrix
+// Rectangular matrices' diagonal elements are filled with the remaining rows and columns as zero. But diagonal matrices are normally square.
+matrix.gen(1).diag(3,2); // returns [[1,0],[0,1],[0,0]]
+matrix.gen(2).diag(3,4); // returns [[2,0,0,0],[0,2,0,0],[0,0,2,0]
+```
