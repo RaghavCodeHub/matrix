@@ -1,6 +1,6 @@
 {
     "name": "matrix-js",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "description": "A Javascript Library to perform basic matrix operations using the functional nature of Javascript",
     "main": "lib",
     "directories": {
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/raghavgujjar/matrix.git"
+        "url": "git+https://github.com/RaghavCodeHub/matrix.git"
     },
     "keywords": [
         "matrix",
@@ -22,13 +22,13 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/raghavgujjar/matrix/blob/master/LICENSE-MIT"
+            "url": "https://github.com/RaghavCodeHub/matrix/blob/master/LICENSE-MIT"
         }
     ],
     "bugs": {
-        "url": "https://github.com/raghavgujjar/matrix/issues"
+        "url": "https://github.com/RaghavCodeHub/matrix/issues"
     },
-    "homepage": "https://github.com/raghavgujjar/matrix#readme",
+    "homepage": "https://github.com/RaghavCodeHub/matrix#readme",
     "devDependencies": {
         "mocha": "^9"
     }

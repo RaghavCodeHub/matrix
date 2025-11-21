@@ -134,12 +134,19 @@ A.equals(B);
 ```
 
 #### 19. Generate
-Generates a matrix with the value passed across the entire matrix or just the diagonal.
+Generates a matrix with the value passed or random values across the entire matrix or just the diagonal.
 ```javascript
 matrix.gen(4).size(2,3); // returns [[4,4,4],[4,4,4]]
 matrix.gen(2).size(2); // returns [[2,2],[2,2]]
 matrix.gen(1).diag(3); // return [[1,0,0],[0,1,0],[0,0,1]], identity matrix
 // Diagonal matrices are normally square. Here, only diagonal elements are filled where row and column indices are same. 
-matrix.gen(1).diag(3,2); // returns [[1,0],[0,1],[0,0]]
 matrix.gen(2).diag(3,4); // returns [[2,0,0,0],[0,2,0,0],[0,0,2,0]
+matrix.gen().size(2);
+/* returns:
+[
+  [ 0.7267589083774397, 0.0874443492491741 ],
+  [ 0.29717634641194746, 0.12599783865191672 ]
+]
+*/
+matrix.gen().diag(2); // returns [ [ 0.4658129342959194, 0 ], [ 0, 0.39870431341062584 ] ]
 ```

@@ -160,5 +160,15 @@ describe('Matrix operations', () => {
         assert.deepEqual(matrix.gen(1).diag(3,2), [[1,0],[0,1],[0,0]]);
         assert.deepEqual(matrix.gen(2).diag(3,4), [[2,0,0,0],[0,2,0,0],[0,0,2,0]]);
         assert.deepEqual(matrix.gen(1).diag(3), [[1,0,0],[0,1,0],[0,0,1]]);
+        assert.ok(matrix.gen().size(2).flat().every(v => v >= 0 && v <= 1));
+        console.log(matrix.gen().diag(3).flat());
+        matrix.gen().diag(3).flat().forEach((v, i) => {
+            if (i % 4 === 0) {
+                console.log(i);
+                assert.ok(v > 0 && v < 1);
+            } else {
+                assert.equal(v, 0);
+            }
+        });
     });
 });
